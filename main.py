@@ -62,8 +62,8 @@ with open(rawPath, encoding="utf-8") as raw:
 
             process.write(str(time) + '$' + str(playerId) + '$' + str(msg) + '$' + str(version))
 
-            #if counter > 2:
-                #break
+            if counter > 2:
+                break
 
 counter2 = 0
 imageIndex = []
@@ -107,6 +107,10 @@ with open(processPath, 'r', encoding="utf-8") as process:
         else:
             textWindow.insert(INSERT, " " + playerId + "  " + messageTime + "\n\n ")
         textWindow.insert(INSERT, message + "\n ")
+
+
+def refresh(args):
+    pass
 
 
 refreshButton = Button(window, text='按我手動刷新\n\n5分鐘自動刷新一次', height=10, width=15, command=refresh)
